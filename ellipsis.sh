@@ -2,10 +2,13 @@
 #
 # shinzui/alacritty ellipsis package
 
-# The following hooks can be defined to customize behavior of your package:
-# pkg.install() {
-#     fs.link_files $PKG_PATH
-# }
+pkg.install() {
+  git clone https://github.com/jwilm/alacritty.git /tmp/alacritty
+  cd /tmp/alacritty
+  cargo build --release
+  make app
+  cp -r target/release/osx/Alacritty.app /Applications/Alacritty.app
+}
 
 # pkg.push() {
 #     git.push
