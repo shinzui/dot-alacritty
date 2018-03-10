@@ -2,6 +2,10 @@
 #
 # shinzui/alacritty ellipsis package
 
+pkg.link() {
+  fs.link_file alacritty.yml ~/.config/alacritty/alacritty.yml 
+}
+
 pkg.install() {
   git clone https://github.com/jwilm/alacritty.git /tmp/alacritty
   cd /tmp/alacritty
