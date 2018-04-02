@@ -12,7 +12,10 @@ pkg.install() {
   cargo build --release
   make app
   cp -r target/release/osx/Alacritty.app /Applications/Alacritty.app
-  mkdir ~/.config/alacritty
+
+  if [ -d "~/.config/alacritty" ]; then
+    mkdir ~/.config/alacritty
+  fi
 }
 
 # pkg.push() {
